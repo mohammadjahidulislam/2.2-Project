@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="12" styleClass="root-pane"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.attendance.controller.RegisterController">
+    <padding><Insets top="40" right="60" bottom="40" left="60"/></padding>
+
+    <Label text="Create New Account" styleClass="title-label"/>
+
+    <VBox spacing="8" maxWidth="340">
+        <Label text="I am a:"/>
+        <ComboBox fx:id="roleBox" maxWidth="Infinity"/>
+
+        <Label text="Full Name"/>
+        <TextField fx:id="nameField"/>
+
+        <Label text="Student ID (leave blank if teacher)"/>
+        <TextField fx:id="studentIdField"/>
+
+        <Label text="Department"/>
+        <TextField fx:id="departmentField"/>
+
+        <Label text="Email"/>
+        <TextField fx:id="emailField"/>
+
+        <Label text="Password"/>
+        <PasswordField fx:id="passwordField"/>
+
+        <Button text="Register" onAction="#handleRegister" styleClass="primary-button" maxWidth="Infinity"/>
+        <Label fx:id="messageLabel" styleClass="error-label" wrapText="true"/>
+
+        <Hyperlink text="Already have an account? Login" onAction="#goToLogin"/>
+    </VBox>
+</VBox>

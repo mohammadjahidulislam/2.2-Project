@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.attendance.controller.AttendanceSheetController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="top-bar">
+            <padding><Insets top="12" right="20" bottom="12" left="20"/></padding>
+            <Label fx:id="courseLabel" styleClass="title-label"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Export CSV" onAction="#exportCSV" styleClass="primary-button"/>
+            <Button text="Back to Dashboard" onAction="#goBack"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="10">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <TableView fx:id="sheetTable" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </center>
+</BorderPane>

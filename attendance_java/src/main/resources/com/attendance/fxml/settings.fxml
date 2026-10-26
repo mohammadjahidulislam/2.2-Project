@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20" styleClass="root-pane"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.attendance.controller.SettingsController">
+    <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+
+    <Label text="Settings" styleClass="title-label"/>
+
+    <VBox spacing="8" maxWidth="320">
+        <Label text="Profile" styleClass="subtitle-label"/>
+        <Label text="Name"/>
+        <TextField fx:id="nameField"/>
+        <Label text="Department"/>
+        <TextField fx:id="departmentField"/>
+        <Label text="Email (cannot be changed)"/>
+        <TextField fx:id="emailField" disable="true"/>
+        <Button text="Save Profile" onAction="#saveProfile" styleClass="primary-button" maxWidth="Infinity"/>
+        <Label fx:id="profileMessage" styleClass="error-label" wrapText="true"/>
+    </VBox>
+
+    <Separator maxWidth="320"/>
+
+    <VBox spacing="8" maxWidth="320">
+        <Label text="Change Password" styleClass="subtitle-label"/>
+        <Label text="Current Password"/>
+        <PasswordField fx:id="currentPasswordField"/>
+        <Label text="New Password"/>
+        <PasswordField fx:id="newPasswordField"/>
+        <Button text="Change Password" onAction="#changePassword" maxWidth="Infinity"/>
+        <Label fx:id="passwordMessage" styleClass="error-label" wrapText="true"/>
+    </VBox>
+
+    <Button text="Back to Dashboard" onAction="#goBack"/>
+</VBox>

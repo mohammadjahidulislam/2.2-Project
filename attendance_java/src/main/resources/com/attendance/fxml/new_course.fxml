@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="12" styleClass="root-pane"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.attendance.controller.NewCourseController">
+    <padding><Insets top="60" right="60" bottom="60" left="60"/></padding>
+
+    <Label text="Create New Course" styleClass="title-label"/>
+
+    <VBox spacing="8" maxWidth="320">
+        <Label text="Course Code (e.g. CSE-401)"/>
+        <TextField fx:id="codeField"/>
+
+        <Label text="Course Name"/>
+        <TextField fx:id="nameField"/>
+
+        <Button text="Create Course" onAction="#handleCreate" styleClass="primary-button" maxWidth="Infinity"/>
+        <Button text="Back to Dashboard" onAction="#goBack" maxWidth="Infinity"/>
+        <Label fx:id="messageLabel" styleClass="error-label" wrapText="true"/>
+    </VBox>
+</VBox>

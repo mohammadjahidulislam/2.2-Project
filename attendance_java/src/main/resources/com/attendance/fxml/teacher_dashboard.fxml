@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.attendance.controller.TeacherDashboardController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="top-bar">
+            <padding><Insets top="12" right="20" bottom="12" left="20"/></padding>
+            <Label text="Teacher Dashboard" styleClass="title-label"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeLabel" styleClass="subtitle-label"/>
+            <Button text="Settings" onAction="#goToSettings"/>
+            <Button text="Logout" onAction="#handleLogout"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="15">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+
+            <HBox spacing="10">
+                <Button text="+ New Course" onAction="#goToNewCourse" styleClass="primary-button"/>
+            </HBox>
+
+            <Label text="My Courses" styleClass="subtitle-label"/>
+            <TableView fx:id="courseTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCode" text="Course Code" prefWidth="120"/>
+                    <TableColumn fx:id="colName" text="Course Name" prefWidth="240"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Topic for today (optional):"/>
+                <TextField fx:id="topicField" prefWidth="200"/>
+                <Button text="Start New Class Session (QR)" onAction="#startSession" styleClass="primary-button"/>
+                <Button text="View Attendance Sheet" onAction="#viewAttendanceSheet"/>
+                <Button text="Export CSV" onAction="#exportCSV"/>
+            </HBox>
+            <Label fx:id="messageLabel" styleClass="error-label"/>
+        </VBox>
+    </center>
+</BorderPane>

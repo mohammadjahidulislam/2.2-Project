@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="12" styleClass="root-pane"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.attendance.controller.QRDisplayController">
+    <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+
+    <Label fx:id="courseLabel" styleClass="title-label"/>
+    <Label fx:id="topicLabel" styleClass="subtitle-label"/>
+
+    <ImageView fx:id="qrImageView" fitWidth="300" fitHeight="300"/>
+
+    <Label text="This QR code refreshes automatically every 25 seconds to prevent proxy attendance." wrapText="true" maxWidth="320" styleClass="hint-label"/>
+
+    <ProgressBar fx:id="progressBar" prefWidth="300"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Close Session" onAction="#handleCloseSession" styleClass="danger-button"/>
+        <Button text="Back to Dashboard" onAction="#goBack"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.attendance.controller.StudentDashboardController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="top-bar">
+            <padding><Insets top="12" right="20" bottom="12" left="20"/></padding>
+            <Label text="Student Dashboard" styleClass="title-label"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeLabel" styleClass="subtitle-label"/>
+            <Button text="Settings" onAction="#goToSettings"/>
+            <Button text="Logout" onAction="#handleLogout"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="15">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+
+            <HBox spacing="10">
+                <Button text="Scan QR for Attendance" onAction="#goToScan" styleClass="primary-button"/>
+                <Button text="Browse / Enroll Courses" onAction="#goToBrowseCourses"/>
+            </HBox>
+
+            <Label text="My Courses and Attendance" styleClass="subtitle-label"/>
+            <TableView fx:id="courseTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCode" text="Course Code" prefWidth="120"/>
+                    <TableColumn fx:id="colName" text="Course Name" prefWidth="220"/>
+                    <TableColumn fx:id="colTotal" text="Total Classes" prefWidth="110"/>
+                    <TableColumn fx:id="colAttended" text="Attended" prefWidth="100"/>
+                    <TableColumn fx:id="colPercent" text="Percentage" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

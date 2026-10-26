@@ -1,0 +1,47 @@
+.root-pane {
+    -fx-background-color: #f4f6f9;
+}
+
+.top-bar {
+    -fx-background-color: #2f5fdb;
+}
+
+.top-bar .label {
+    -fx-text-fill: white;
+}
+
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.top-bar .title-label {
+    -fx-text-fill: white;
+}
+
+.subtitle-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555;
+}
+
+.hint-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #777777;
+}
+
+.error-label {
+    -fx-text-fill: #c0392b;
+    -fx-font-size: 12px;
+}
+
+.primary-button {
+    -fx-background-color: #2f5fdb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.danger-button {
+    -fx-background-color: #c0392b;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
